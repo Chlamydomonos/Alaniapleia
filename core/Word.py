@@ -48,7 +48,7 @@ def save(word: Word):
         temp_word = pickle.load(f)
         f.close()
         f = open(path, 'wb')
-        pickle.dump(word + temp_word, f)
+        pickle.dump(temp_word + word, f)
         f.close()
     else:
         f = open(path, 'wb+')
@@ -64,3 +64,10 @@ def load(name: str):
         return pickle.load(f)
     else:
         return empty_word
+
+
+def check(word: str):
+    for i in range(len(word)):
+        if i == 0:
+            return True
+    return True
